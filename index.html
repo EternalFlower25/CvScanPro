@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html class="light" lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Login - CVScan Pro</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+      colors: {
+        "surface-tint": "#455f88", "on-secondary-container": "#4d6b5d", "surface-dim": "#cfdaf1",
+        "primary-fixed-dim": "#adc7f7", "primary": "#002045", "tertiary-container": "#30363c",
+        "surface": "#f9f9ff", "on-tertiary-fixed-variant": "#41474e", "on-secondary-fixed-variant": "#304d40",
+        "secondary-container": "#c9ead9", "outline-variant": "#c4c6cf", "surface-container-low": "#f0f3ff",
+        "on-secondary": "#ffffff", "primary-fixed": "#d6e3ff", "on-primary": "#ffffff",
+        "inverse-on-surface": "#ebf1ff", "surface-container-high": "#dee8ff", "on-tertiary": "#ffffff",
+        "surface-container-highest": "#d8e3fa", "on-error": "#ffffff", "on-tertiary-container": "#989fa6",
+        "on-primary-container": "#86a0cd", "secondary-fixed": "#c9ead9", "on-secondary-fixed": "#022016",
+        "on-primary-fixed": "#001b3c", "secondary": "#476558", "inverse-primary": "#adc7f7",
+        "on-background": "#111c2c", "surface-container": "#e7eeff", "on-primary-fixed-variant": "#2d476f",
+        "error": "#ba1a1a", "surface-bright": "#f9f9ff", "surface-container-lowest": "#ffffff",
+        "outline": "#74777f", "tertiary": "#1b2127", "on-surface-variant": "#43474e",
+        "inverse-surface": "#263142", "on-tertiary-fixed": "#161c22", "background": "#f9f9ff",
+        "tertiary-fixed-dim": "#c1c7cf", "tertiary-fixed": "#dde3eb", "on-surface": "#111c2c",
+        "on-error-container": "#93000a", "surface-variant": "#d8e3fa", "primary-container": "#1a365d",
+        "error-container": "#ffdad6", "secondary-fixed-dim": "#adcebe"
+      },
+      borderRadius: { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" },
+      spacing: {
+        "stack-md": "16px", "stack-sm": "8px", "container-margin": "24px",
+        "gutter": "16px", "sidebar-width": "260px", "stack-lg": "24px", "base": "4px"
+      },
+      fontFamily: {
+        "headline-sm": ["Inter"], "data-mono": ["Inter"], "display-lg": ["Inter"],
+        "body-sm": ["Inter"], "label-md": ["Inter"], "body-lg": ["Inter"],
+        "headline-md": ["Inter"], "body-md": ["Inter"]
+      },
+      fontSize: {
+        "headline-sm": ["20px", { lineHeight: "28px", fontWeight: "600" }],
+        "data-mono": ["14px", { lineHeight: "20px", letterSpacing: "-0.01em", fontWeight: "500" }],
+        "display-lg": ["32px", { lineHeight: "40px", letterSpacing: "-0.02em", fontWeight: "700" }],
+        "body-sm": ["13px", { lineHeight: "18px", fontWeight: "400" }],
+        "label-md": ["12px", { lineHeight: "16px", letterSpacing: "0.05em", fontWeight: "600" }],
+        "body-lg": ["16px", { lineHeight: "24px", fontWeight: "400" }],
+        "headline-md": ["24px", { lineHeight: "32px", letterSpacing: "-0.01em", fontWeight: "600" }],
+        "body-md": ["14px", { lineHeight: "20px", fontWeight: "400" }]
+      }
+    }
+  }
+}
+</script>
+</head>
+<body class="bg-surface-container-low min-h-screen flex items-center justify-center font-sans antialiased text-on-surface">
+<div class="absolute inset-0 z-0 bg-[radial-gradient(#c4c6cf_1px,transparent_1px)] [background-size:16px_16px] opacity-20"></div>
+<main class="w-full max-w-md px-container-margin z-10 relative">
+  <div class="bg-surface-container-lowest rounded-lg shadow-sm border border-outline-variant/30 overflow-hidden">
+    <div class="p-stack-lg border-b border-outline-variant/30 text-center bg-primary-container text-on-primary">
+      <h1 class="font-display-lg text-display-lg mb-stack-sm text-primary-fixed">CVScan Pro</h1>
+      <p class="font-body-md text-body-md text-on-primary-container">Colegio Fernando Belaunde Terry</p>
+    </div>
+    <div class="p-stack-lg">
+      <div id="error-msg" class="hidden mb-4 p-3 bg-error-container text-on-error-container rounded text-sm font-body-sm">
+        Credenciales incorrectas. Usa: admin@colegio.edu.pe / admin123
+      </div>
+      <div class="space-y-stack-md">
+        <div>
+          <label class="block font-label-md text-label-md text-on-surface-variant mb-stack-sm uppercase tracking-wider" for="email">Correo Electrónico o Usuario</label>
+          <div class="relative">
+            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+              <span class="material-symbols-outlined text-outline">person</span>
+            </div>
+            <input class="block w-full pl-10 pr-3 py-2 border border-outline-variant/50 rounded-DEFAULT text-on-surface font-body-md text-body-md focus:ring-2 focus:ring-primary focus:border-primary bg-surface-container-lowest transition-colors" id="email" placeholder="admin@colegio.edu.pe" type="email"/>
+          </div>
+        </div>
+        <div>
+          <label class="block font-label-md text-label-md text-on-surface-variant mb-stack-sm uppercase tracking-wider" for="password">Contraseña</label>
+          <div class="relative">
+            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+              <span class="material-symbols-outlined text-outline">lock</span>
+            </div>
+            <input class="block w-full pl-10 pr-3 py-2 border border-outline-variant/50 rounded-DEFAULT text-on-surface font-body-md text-body-md focus:ring-2 focus:ring-primary focus:border-primary bg-surface-container-lowest transition-colors" id="password" placeholder="••••••••" type="password"/>
+          </div>
+          <div class="mt-stack-sm flex justify-end">
+            <a class="font-body-sm text-body-sm text-primary hover:underline font-medium" href="#">¿Olvidé mi contraseña?</a>
+          </div>
+        </div>
+        <div class="pt-stack-sm">
+          <button onclick="handleLogin()" class="w-full flex justify-center py-2 px-4 border border-transparent rounded-DEFAULT shadow-sm font-label-md text-label-md text-on-primary bg-primary hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary transition-colors uppercase tracking-wider cursor-pointer">
+            Ingresar
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="px-stack-lg py-stack-md bg-surface-container border-t border-outline-variant/30 text-center">
+      <p class="font-body-sm text-body-sm text-on-surface-variant">
+        <span class="material-symbols-outlined align-middle text-[16px] mr-1">security</span>
+        Acceso restringido a personal autorizado.
+      </p>
+    </div>
+  </div>
+  <p class="text-center text-xs text-on-surface-variant/50 mt-4">Demo: admin@colegio.edu.pe / admin123</p>
+</main>
+<script>
+function handleLogin() {
+  const email = document.getElementById('email').value;
+  const password = document.getElementById('password').value;
+  const errorMsg = document.getElementById('error-msg');
+  if (email === 'admin@colegio.edu.pe' && password === 'admin123') {
+    window.location.href = 'dashboard.html';
+  } else {
+    errorMsg.classList.remove('hidden');
+    setTimeout(() => errorMsg.classList.add('hidden'), 3000);
+  }
+}
+document.getElementById('password').addEventListener('keypress', function(e) {
+  if (e.key === 'Enter') handleLogin();
+});
+</script>
+</body>
+</html>
